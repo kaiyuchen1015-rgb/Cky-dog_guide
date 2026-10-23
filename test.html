@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Take a lighthearted quiz to discover your dog breed personality match.">
+  <title>Dog Breed Personality Quiz | Dog Guide</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="nav.js" defer></script>
+  <script src="test.js" defer></script>
+</head>
+<body class="quiz-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Dog Guide home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path class="ear" d="M17 14C12 10 8 13 5 20C2 27 5 34 11 35C16 35 19 29 20 22L22 17ZM31 14C36 10 40 13 43 20C46 27 43 34 37 35C32 35 29 29 28 22L26 17Z"/><path d="M24 11C17 11 12 16 10 23C8 28 7 33 9 38C11 43 17 45 24 45C31 45 37 43 39 38C41 33 40 28 38 23C36 16 31 11 24 11Z"/><circle class="icon-eye" cx="17" cy="24" r="2.6"/><circle class="icon-eye" cx="31" cy="24" r="2.6"/><path class="icon-nose" d="M20 28C20 26.5 21 25.5 22.5 25.5h3C27 25.5 28 26.5 28 28c0 2-2.5 4.3-4 5.5-1.5-1.2-4-3.5-4-5.5Z"/><path class="icon-mouth" d="M24 34v1M24 35c-1 2-3 3-5 3M24 35c1 2 3 3 5 3"/></svg></span><span>Dog Guide</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a class="bone-link hang-short" href="index.html"><span class="bone-cord" aria-hidden="true"></span><svg class="bone-outline" viewBox="0 0 120 56" aria-hidden="true"><path d="M30 15C25 15 22 11 19 7 15 1 8 2 5 8 2 13 6 19 12 22 6 25 2 31 5 37c3 6 10 7 14 1 3-4 6 3 11 3h60c5 0 8-7 11-3 4 6 11 5 14-1 3-6-1-12-7-15 6-3 10-9 7-14-3-6-10-7-14-1-3 4-6 8-11 8Z"/></svg><span class="bone-label">Home</span></a>
+      <a class="bone-link hang-long" href="breeds.html"><span class="bone-cord" aria-hidden="true"></span><svg class="bone-outline" viewBox="0 0 120 56" aria-hidden="true"><path d="M30 15C25 15 22 11 19 7 15 1 8 2 5 8 2 13 6 19 12 22 6 25 2 31 5 37c3 6 10 7 14 1 3-4 6 3 11 3h60c5 0 8-7 11-3 4 6 11 5 14-1 3-6-1-12-7-15 6-3 10-9 7-14-3-6-10-7-14-1-3 4-6 8-11 8Z"/></svg><span class="bone-label">Breeds</span></a>
+      <a class="bone-link hang-mid" href="detail.html"><span class="bone-cord" aria-hidden="true"></span><svg class="bone-outline" viewBox="0 0 120 56" aria-hidden="true"><path d="M30 15C25 15 22 11 19 7 15 1 8 2 5 8 2 13 6 19 12 22 6 25 2 31 5 37c3 6 10 7 14 1 3-4 6-1 11 3h60c5 0 8-7 11-3 4 6 11 5 14-1 3-6-1-12-7-15 6-3 10-9 7-14-3-6-10-7-14-1-3 4-6 8-11 8Z"/></svg><span class="bone-label">Detail</span></a>
+      <a class="bone-link hang-long active" href="test.html"><span class="bone-cord" aria-hidden="true"></span><svg class="bone-outline" viewBox="0 0 120 56" aria-hidden="true"><path d="M30 15C25 15 22 11 19 7 15 1 8 2 5 8 2 13 6 19 12 22 6 25 2 31 5 37c3 6 10 7 14 1 3-4 6 3 11 3h60c5 0 8-7 11-3 4 6 11 5 14-1 3-6-1-12-7-15 6-3 10-9 7-14-3-6-10-7-14-1-3 4-6 8-11 8Z"/></svg><span class="bone-label">Test</span></a>
+    </nav>
+  </header>
+  <main class="quiz-main">
+    <div class="quiz-progress-wrap" id="quiz-progress-wrap" hidden><div class="quiz-progress-label"><span id="quiz-progress-text">Question 1 of 7</span><span id="quiz-progress-percent">0%</span></div><div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div></div>
+    <section class="quiz-shell" id="quiz-shell" aria-live="polite"><div class="quiz-intro"><span class="quiz-kicker">A little self-discovery</span><h1>Discover your dog-breed spirit</h1><p>Answer a few fun questions to find the dog breed that best matches your personality.</p><button class="button" id="quiz-start" type="button">Start</button></div></section>
+    <div class="quiz-dog-border" aria-hidden="true">
+      <svg class="quiz-dog dog-play" viewBox="0 0 120 82"><ellipse cx="56" cy="50" rx="29" ry="17"/><circle cx="88" cy="36" r="15"/><path d="M77 24 72 9 88 23M94 23l8-14 5 20M29 49Q17 35 12 43q-5 8 8 14M40 63l-6 13M70 64l7 11M95 49l11 8-8 8-12-7"/><circle class="dog-eye" cx="93" cy="34" r="2"/><circle class="dog-ball" cx="14" cy="73" r="6"/></svg>
+      <svg class="quiz-dog dog-sit" viewBox="0 0 120 82"><ellipse cx="57" cy="54" rx="24" ry="19"/><circle cx="60" cy="27" r="16"/><path d="M48 16 44 3 57 13M70 16 78 5 77 22M43 53l-4 23h13l4-18M65 57l5 19h13L78 52M79 54q18 9 11 17H72"/><circle class="dog-eye" cx="66" cy="27" r="2"/></svg>
+      <svg class="quiz-dog dog-lie" viewBox="0 0 120 82"><ellipse cx="56" cy="57" rx="36" ry="14"/><circle cx="91" cy="48" r="15"/><path d="M81 36 77 23 91 34M98 35l9-11 3 20M29 58 17 68h25M53 67l-4 8h26M74 65l10 9h19M19 55Q5 43 5 54q1 9 14 8"/><circle class="dog-eye" cx="96" cy="47" r="2"/></svg>
+      <svg class="quiz-dog dog-play dog-small" viewBox="0 0 120 82"><ellipse cx="54" cy="52" rx="25" ry="15"/><circle cx="83" cy="38" r="14"/><path d="M74 27 68 14 83 24M91 26l8-12 4 20M32 49 19 37l-7 7 15 16M42 63l-8 12M65 64l7 11M86 52l14 12-8 7-12-12"/><circle class="dog-eye" cx="88" cy="37" r="2"/></svg>
+    </div>
+  </main>
+</body>
+</html>

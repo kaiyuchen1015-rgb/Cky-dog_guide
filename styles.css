@@ -31,6 +31,10 @@ body{font-size:17px}.brand{font-size:17px}.main-nav{font-size:15px}.hero.home-he
 .detail-page-card .detail-content{max-width:780px;margin:auto}
 .detail-page-card h1{margin:0}
 .detail-page-actions{display:flex;justify-content:flex-end;margin-top:22px}
+.breed-more-card{min-height:200px;padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;border:2px dashed #c9b89f;border-radius:22px;background:linear-gradient(145deg,#f7f0e5,#eee7d9);color:#665849}
+.breed-more-card strong{font-size:17px;color:#4e4439}
+.breed-more-card>span:last-child{max-width:220px;font-size:13px;line-height:1.6}
+.breed-more-paw{font-size:27px;line-height:1}
 .detail-page-card .detail-block h2{display:inline-flex;align-items:center;gap:7px;margin:0 0 10px;padding:5px 13px;border:2px solid #b99a73;border-radius:15px 15px 15px 6px;background:linear-gradient(135deg,#fffaf1,#f4e8d7);box-shadow:0 3px 0 rgba(126,86,58,.13);color:#574b40;font-size:16px;line-height:1.4;letter-spacing:0}
 .detail-page-card .detail-block h2:before{content:'🐾';font-size:20px;line-height:1}
 .detail-page-card .detail-block p{font-size:15px;line-height:1.9}
@@ -45,3 +49,68 @@ body{font-size:17px}.brand{font-size:17px}.main-nav{font-size:15px}.hero.home-he
 .breed-card .breed-photo[src*="smooth-haired-dachshund"]{object-position:center 18%}
 .breed-card .breed-photo[src*="Italian_Greyhound_standing_gray"]{object-position:center 18%}
 .breed-card .breed-photo[src*="dalmatian-adult"]{object-position:center 18%}
+.breed-card .breed-photo[src*="akita-adulto"]{object-position:center 20%}
+.breed-card .breed-photo[src*="Bull_Terrier_R_02"]{object-position:center 18%}
+.breed-card .breed-photo[src*="West-Highland-white-terrier"]{object-position:center 18%}
+.breed-card .breed-photo[src*="Afgan_Hound"]{object-position:center 18%}
+.breed-card .breed-photo[src*="Doberman-Pinscher_Featured-Image"]{object-position:center 20%}
+.breed-card .breed-photo[src*="Cocker-Spaniel-Breed-Information"]{object-position:center 18%}
+.breed-card .breed-photo[src*="bf4e2e0e9b813a4c35bf6602a24b"]{object-position:center 18%}
+.breed-card .breed-photo[src*="OIP.ncFnLqINaXTK82Xb_gnDBwAAAA"]{object-position:center 32%}
+.breed-card .breed-photo[src*="shetland-sheepdog"]{object-position:center 18%}
+.site-header .main-nav{width:498px}
+.quiz-nav a.active{background:#e9eddf;color:var(--green-dark);font-weight:700}
+@media(max-width:560px){.site-header .main-nav{width:284px}.site-header .main-nav a.bone-link{flex:0 0 70px;width:70px}.site-header .main-nav .bone-cord{left:34px}.site-header .main-nav .bone-outline{width:70px;height:42px}.site-header .main-nav .bone-label{width:70px;font-size:10px}}
+.home-quiz-link{max-width:1104px;margin:22px auto 0;padding:0 28px;text-align:right}
+.quiz-page [hidden]{display:none!important}
+.quiz-nav{display:flex;gap:22px;align-items:center;color:#74695f;font-size:14px}
+.quiz-nav a{padding:8px 12px;border-radius:18px;transition:background .2s,color .2s}
+.quiz-nav a:hover{background:#e9eddf;color:var(--green-dark)}
+.quiz-main{max-width:900px;margin:45px auto 80px;padding:0 24px}
+.quiz-progress-wrap{position:sticky;top:12px;z-index:5;margin:0 auto 20px;padding:14px 18px;border:1px solid #eadfce;border-radius:18px;background:rgba(255,250,242,.96);box-shadow:0 5px 16px rgba(97,75,52,.08);backdrop-filter:blur(8px)}
+.quiz-progress-label{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;color:#66594c;font-size:13px;font-weight:700}
+.quiz-progress-track{height:8px;overflow:hidden;border-radius:99px;background:#e8ddcc}
+.quiz-progress-track span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#94a184,#637c5b);transition:width .25s ease}
+.quiz-shell{min-height:360px;padding:clamp(24px,5vw,48px);border:1px solid #eadfce;border-radius:30px;background:linear-gradient(145deg,#fffaf2,#f4eadb);box-shadow:var(--shadow)}
+.quiz-intro{text-align:center;max-width:620px;margin:40px auto}
+.quiz-kicker{display:inline-block;margin-bottom:10px;color:#718064;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.quiz-intro h1,.quiz-question h1,.quiz-results>h1{margin:0;color:#43392f;font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.04em}
+.quiz-intro p{margin:18px auto 26px;max-width:540px;color:#766a5e;line-height:1.8}
+.quiz-question{max-width:680px;margin:0 auto}
+.quiz-question h1{font-size:clamp(26px,4vw,36px);margin-bottom:25px}
+.quiz-answers{display:grid;gap:11px}
+.quiz-answer{display:flex;align-items:center;gap:14px;width:100%;padding:14px 16px;border:1px solid #dfd2c0;border-radius:17px;background:#fffdf8;color:#574b40;text-align:left;font:inherit;cursor:pointer;transition:transform .18s,border .18s,background .18s,box-shadow .18s}
+.quiz-answer:hover{transform:translateY(-2px);border-color:#a7b091;box-shadow:0 5px 12px rgba(97,75,52,.08)}
+.quiz-answer.is-selected{border-color:#748667;background:#edf0e5;box-shadow:0 0 0 2px rgba(99,124,91,.14)}
+.quiz-answer-mark{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:#f1e6d6;color:#705c44;font-size:12px;font-weight:800}
+.quiz-answer.is-selected .quiz-answer-mark{background:#718064;color:#fff}
+.quiz-controls{display:flex;justify-content:space-between;align-items:center;margin-top:25px}
+.quiz-controls button:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.quiz-back{padding:10px 14px;border:0;background:transparent;color:#6e6256;font:inherit;font-weight:700;cursor:pointer}
+.quiz-results>h1{margin-bottom:24px}
+.quiz-result-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.quiz-result-card{overflow:hidden;border:1px solid #e4d8c8;border-radius:20px;background:#fffdf8;box-shadow:0 6px 16px rgba(97,75,52,.07)}
+.quiz-result-card img{display:block;width:100%;height:190px;object-fit:cover;object-position:center 25%;background:#f1e6d6}
+.quiz-result-card>div{padding:16px 18px 18px}
+.quiz-result-label{color:#718064;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.quiz-result-card h2{margin:5px 0 7px;color:#43392f;font-size:21px;line-height:1.25}
+.quiz-result-card p{margin:0;color:#766a5e;font-size:13px;line-height:1.7}
+.quiz-result-card.is-primary{border-color:#a6b092;box-shadow:0 0 0 2px rgba(99,124,91,.13),0 8px 18px rgba(97,75,52,.08)}
+.quiz-match{margin-top:28px;padding-top:21px;border-top:1px dashed #dacdbb}
+.quiz-match>h2{margin:0;color:#43392f;font-size:22px}
+.quiz-match>p{margin:5px 0 14px;color:#766a5e;font-size:14px}
+.quiz-result-card.is-match{max-width:460px}
+.quiz-home-button{margin-top:25px}
+#quiz-start{position:relative;padding:14px 34px 14px 44px;border:1px solid #d9c7a7;border-radius:999px;background:linear-gradient(180deg,#f4e8cb,#e7d1a8);color:#5e4934;box-shadow:0 4px 0 #c8ab7d,0 8px 17px rgba(105,79,47,.14);font-size:16px;letter-spacing:.02em;transition:transform .2s,box-shadow .2s,filter .2s}
+#quiz-start:before{content:'✦';position:absolute;left:19px;top:50%;transform:translateY(-52%);font-size:17px;color:#94734c}
+#quiz-start:hover{transform:translateY(-2px);filter:brightness(1.04);box-shadow:0 6px 0 #c8ab7d,0 11px 20px rgba(105,79,47,.18)}
+.quiz-dog-border{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:space-around;gap:12px;height:78px;margin:-55px 12px 0;padding:0 10px;border-bottom:2px dashed #d8c5a7;pointer-events:none}
+.quiz-dog{width:clamp(64px,13vw,112px);height:70px;overflow:visible;fill:#d9a875;stroke:#8a654b;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 3px 2px rgba(91,67,46,.14))}
+.quiz-dog path{fill:none;stroke:#8a654b;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.quiz-dog .dog-eye{fill:#49392d;stroke:none}
+.quiz-dog .dog-ball{fill:#d88769;stroke:#a45e4b;stroke-width:2}
+.dog-sit{fill:#a7b08d}
+.dog-lie{fill:#d4b37c}
+.dog-small{fill:#b78b68}
+.quiz-answer:focus-visible,.quiz-back:focus-visible,.quiz-nav a:focus-visible{outline:3px solid #d5ac67;outline-offset:3px}
+@media(max-width:560px){.home-quiz-link{padding:0 18px;text-align:center}.quiz-main{margin:28px auto 55px;padding:0 16px}.quiz-shell{padding:23px 18px;border-radius:23px}.quiz-intro{margin:25px auto}.quiz-progress-wrap{top:6px;padding:12px}.quiz-answer{padding:12px}.quiz-result-featured{grid-template-columns:1fr}.quiz-result-card img{height:210px}.quiz-nav{gap:4px;font-size:12px}}
