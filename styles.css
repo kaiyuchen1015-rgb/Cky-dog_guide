@@ -22,3 +22,26 @@ body{font-size:17px}.brand{font-size:17px}.main-nav{font-size:15px}.hero.home-he
 .site-header{position:relative}.site-header .main-nav{position:absolute;right:28px;top:0;width:258px;height:auto;justify-content:space-between;gap:18px;align-items:flex-start}
 @media(max-width:560px){.site-header .main-nav{right:18px;width:191px;gap:3px}}
 .brand-mark svg .icon-eye{fill:#493a30;stroke:#493a30;stroke-width:1}.brand-mark svg .icon-nose{fill:#72543f;stroke:#72543f;stroke-width:1.6;stroke-linejoin:round}.brand-mark svg .icon-mouth{fill:none;stroke:#72543f;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.breed-photo{display:block;width:100%;height:100%;object-fit:cover;border-radius:inherit}.breed-card .photo-placeholder{overflow:hidden}.detail-photo{overflow:hidden}
+.breed-card .breed-photo{object-position:center 30%}.detail-photo .breed-photo{object-fit:contain;background:#f1e6d6}
+.breed-card:has([src*="miniature-poodle"] ) .breed-photo,.breed-card:has([src*="Beagles-pets"]) .breed-photo{object-position:center 16%}
+.card-arrow{z-index:2;bottom:10px;right:10px;padding:6px 9px;border-radius:14px;background:#637c5b;color:white;font-size:11px;font-weight:700}
+.detail-page-card{overflow:hidden;border:1px solid #eadfce;border-radius:24px;background:var(--paper);box-shadow:var(--shadow)}
+.detail-page-photo{display:block;width:100%;max-height:460px;object-fit:contain;background:#f1e6d6}
+.detail-page-card .detail-content{max-width:780px;margin:auto}
+.detail-page-card h1{margin:0}
+.detail-page-actions{display:flex;justify-content:flex-end;margin-top:22px}
+.detail-page-card .detail-block h2{display:inline-flex;align-items:center;gap:7px;margin:0 0 10px;padding:5px 13px;border:2px solid #b99a73;border-radius:15px 15px 15px 6px;background:linear-gradient(135deg,#fffaf1,#f4e8d7);box-shadow:0 3px 0 rgba(126,86,58,.13);color:#574b40;font-size:16px;line-height:1.4;letter-spacing:0}
+.detail-page-card .detail-block h2:before{content:'🐾';font-size:20px;line-height:1}
+.detail-page-card .detail-block p{font-size:15px;line-height:1.9}
+.site-header .main-nav{width:378px}
+@media(max-width:560px){.site-header .main-nav{width:285px}}
+.breed-card .breed-photo[src*="miniature-poodle-900x900-crop"]{object-position:center 50%}
+.breed-card .breed-photo[src*="Beagles-pets"]{object-position:center 30%}
+.breed-card .breed-photo[src*="Chow-Chow-Dog-Breed-Information"]{object-position:center 20%}
+.breed-card .breed-photo[src*="tibetan-mastiff-4"]{object-position:center 18%}
+.breed-card .breed-photo[src*="Maltese_FeaturedImage"]{object-position:center 18%}
+.breed-card .breed-photo[src*="Saint-bernard-dog"]{object-position:center 18%}
+.breed-card .breed-photo[src*="smooth-haired-dachshund"]{object-position:center 18%}
+.breed-card .breed-photo[src*="Italian_Greyhound_standing_gray"]{object-position:center 18%}
+.breed-card .breed-photo[src*="dalmatian-adult"]{object-position:center 18%}
