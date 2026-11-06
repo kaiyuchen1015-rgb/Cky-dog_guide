@@ -169,9 +169,18 @@ if(detailRoot){
   const breed=breeds.find(item=>item.id===new URLSearchParams(location.search).get('breed'))||breeds[0];
   const care=careInfo[breed.id];
   const dockItems=breeds.map(item=>`<a class="dock-item${item.id===breed.id?' is-current':''}" href="detail.html?breed=${item.id}" aria-label="Explore ${item.name}" title="${item.name}"><img src="${item.image}" alt="" loading="lazy"><span>${item.name}</span></a>`).join('');
-  detailRoot.innerHTML=`<article class="detail-page-card"><img class="detail-page-photo" src="${breed.image}" alt="${breed.name}"><div class="detail-content"><h1>${breed.name}</h1><p class="detail-size">${breed.size}</p><section class="detail-block"><h2>Origin</h2><p>${origins[breed.id]} ${histories[breed.id]}</p></section><section class="detail-block"><h2>Size &amp; Appearance</h2><p>${breed.look} ${breed.varieties} Common coat colors: ${breed.colors}.</p></section><section class="detail-block"><h2>Personality</h2><p>${breed.character}</p></section><section class="detail-block"><h2>Favorite Activities</h2><p>${breed.hobbies}</p></section><section class="detail-block"><h2>Daily Lifestyle</h2><p>${habits[breed.id]}</p></section><section class="detail-block care-guidance"><h2>Care &amp; Maintenance</h2><h3>Things to Watch · Care Difficulty: ${care[0]}</h3><p>${care[1]}</p><h3>Daily Care · Care Difficulty: ${care[0]}</h3><p>${care[2]}</p></section><div class="detail-page-actions"><a class="button" href="breeds.html">Back to Breeds</a></div></div></article><section class="breed-dock" aria-label="Explore other dog breeds"><h2>Explore breeds</h2><div class="breed-dock-track" tabindex="0">${dockItems}</div></section>`;
+  detailRoot.innerHTML=`<article class="detail-page-card"><img class="detail-page-photo" src="${breed.image}" alt="${breed.name}"><div class="detail-content"><h1>${breed.name}</h1><p class="detail-size">${breed.size}</p><section class="detail-block"><h2>Origin</h2><p>${origins[breed.id]} ${histories[breed.id]}</p></section><section class="detail-block"><h2>Size &amp; Appearance</h2><p>${breed.look} ${breed.varieties} Common coat colors: ${breed.colors}.</p></section><section class="detail-block"><h2>Personality</h2><p>${breed.character}</p></section><section class="detail-block"><h2>Favorite Activities</h2><p>${breed.hobbies}</p></section><section class="detail-block"><h2>Daily Lifestyle</h2><p>${habits[breed.id]}</p></section><section class="detail-block care-guidance"><h2>Care &amp; Maintenance</h2><h3>Things to Watch · Care Difficulty: ${care[0]}</h3><p>${care[1]}</p><h3>Daily Care · Care Difficulty: ${care[0]}</h3><p>${care[2]}</p></section><div class="detail-page-actions"><a class="button" href="breeds.html">Back to Breeds</a></div></div></article><section class="breed-dock" aria-label="Explore other dog breeds"><h2>Explore breeds</h2><label class="breed-search-wrap dock-search-wrap"><span class="sr-only">Search breeds</span><input class="breed-search dock-search" type="search" placeholder="Search a breed by name" autocomplete="off"></label><div class="breed-dock-track" tabindex="0">${dockItems}</div></section>`;
   const dock=detailRoot.querySelector('.breed-dock-track');
   const dockItemsElements=Array.from(dock.querySelectorAll('.dock-item'));
+  const originalDockItems=dockItemsElements.slice();
+  const dockSearch=detailRoot.querySelector('.dock-search');
+  dockSearch.addEventListener('input',()=>{
+    const query=dockSearch.value.trim().toLocaleLowerCase();
+    const matches=query?originalDockItems.filter(item=>item.textContent.toLocaleLowerCase().includes(query)):[];
+    const ordered=matches.length?matches.concat(originalDockItems.filter(item=>!matches.includes(item))):originalDockItems;
+    ordered.forEach(item=>dock.append(item));
+    dock.scrollTo({left:0,behavior:'smooth'});
+  });
   const currentDockItem=dock.querySelector('.dock-item.is-current');
   if(currentDockItem)dock.scrollLeft=currentDockItem.offsetLeft+currentDockItem.offsetWidth/2-dock.clientWidth/2;
   const dockStep=dockItemsElements.length>1?dockItemsElements[1].offsetLeft-dockItemsElements[0].offsetLeft:dockItemsElements[0]?.offsetWidth||1;
@@ -205,6 +214,21 @@ if(detailRoot){
 }
 if(list){
   list.innerHTML=breeds.map(breed=>`<a class="breed-card" href="detail.html?breed=${breed.id}" aria-label="View ${breed.name} details"><span class="photo-placeholder"><img class="breed-photo" src="${breed.image}" alt="${breed.name}" loading="lazy" onerror="this.remove()"></span><span class="breed-card-copy"><span class="breed-name">${breed.name}</span><span class="breed-tag">${breed.size}</span></span></a>`).join('');
+  const breedSearch=document.getElementById('breed-search');
+  const originalCards=Array.from(list.querySelectorAll('.breed-card'));
+  const breedSearchForm=document.getElementById('breed-search-form');
+  const breedSearchStatus=document.getElementById('breed-search-status');
+  breedSearchForm?.addEventListener('submit',event=>{
+    event.preventDefault();
+    const query=breedSearch.value.trim().toLocaleLowerCase();
+    if(!query){breedSearchStatus.textContent='Enter a breed name to search.';return;}
+    const matches=originalCards.filter(card=>card.querySelector('.breed-name').textContent.toLocaleLowerCase().includes(query));
+    breedSearchStatus.textContent=matches.length?`${matches.length} breed${matches.length===1?'':'s'} found. Showing the first match.`:'No breeds found. Check the spelling and try again.';
+    if(matches[0]){
+      const top=matches[0].getBoundingClientRect().top+window.scrollY-window.innerHeight/3;
+      window.scrollTo({top:Math.max(0,top),behavior:'smooth'});
+    }
+  });
 }
 document.querySelectorAll('.bone-link').forEach(link=>{
   link.addEventListener('click',event=>{
