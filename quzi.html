@@ -7,7 +7,9 @@
   <title>Dog Breed Personality Quiz | Dog Guide</title>
   <link rel="stylesheet" href="styles.css">
   <script src="nav.js" defer></script>
-  <script src="test.js" defer></script>
+  <script src="quiz.js" defer></script>
+  <script src="quiz-machine.js" defer></script>
+  
 </head>
 <body class="quiz-page">
   <header class="site-header">
@@ -23,12 +25,69 @@
   <main class="quiz-main">
     <div class="quiz-progress-wrap" id="quiz-progress-wrap" hidden><div class="quiz-progress-label"><span id="quiz-progress-text">Question 1 of 7</span><span id="quiz-progress-percent">0%</span></div><div class="quiz-progress-track"><span id="quiz-progress-bar"></span></div></div>
     <section class="quiz-shell" id="quiz-shell" aria-live="polite"><div class="quiz-intro"><span class="quiz-kicker">A little self-discovery</span><h1>Discover your dog-breed spirit</h1><p>Answer a few fun questions to find the dog breed that best matches your personality.</p><button class="button" id="quiz-start" type="button">Start</button></div></section>
-    <div class="quiz-dog-border" aria-hidden="true">
-      <svg class="quiz-dog dog-play" viewBox="0 0 120 82"><ellipse cx="56" cy="50" rx="29" ry="17"/><circle cx="88" cy="36" r="15"/><path d="M77 24 72 9 88 23M94 23l8-14 5 20M29 49Q17 35 12 43q-5 8 8 14M40 63l-6 13M70 64l7 11M95 49l11 8-8 8-12-7"/><circle class="dog-eye" cx="93" cy="34" r="2"/><circle class="dog-ball" cx="14" cy="73" r="6"/></svg>
-      <svg class="quiz-dog dog-sit" viewBox="0 0 120 82"><ellipse cx="57" cy="54" rx="24" ry="19"/><circle cx="60" cy="27" r="16"/><path d="M48 16 44 3 57 13M70 16 78 5 77 22M43 53l-4 23h13l4-18M65 57l5 19h13L78 52M79 54q18 9 11 17H72"/><circle class="dog-eye" cx="66" cy="27" r="2"/></svg>
-      <svg class="quiz-dog dog-lie" viewBox="0 0 120 82"><ellipse cx="56" cy="57" rx="36" ry="14"/><circle cx="91" cy="48" r="15"/><path d="M81 36 77 23 91 34M98 35l9-11 3 20M29 58 17 68h25M53 67l-4 8h26M74 65l10 9h19M19 55Q5 43 5 54q1 9 14 8"/><circle class="dog-eye" cx="96" cy="47" r="2"/></svg>
-      <svg class="quiz-dog dog-play dog-small" viewBox="0 0 120 82"><ellipse cx="54" cy="52" rx="25" ry="15"/><circle cx="83" cy="38" r="14"/><path d="M74 27 68 14 83 24M91 26l8-12 4 20M32 49 19 37l-7 7 15 16M42 63l-8 12M65 64l7 11M86 52l14 12-8 7-12-12"/><circle class="dog-eye" cx="88" cy="37" r="2"/></svg>
-    </div>
+            <section class="quiz-machine" aria-label="Juanjuan's tennis ball game" hidden>
+      <div class="machine-stage" id="machine-stage">
+        <div class="launcher-station">
+          <button class="launcher-button" id="launch-ball" type="button" aria-label="Launch a tennis ball">
+            <svg class="launcher-art" viewBox="0 0 100 90" aria-hidden="true">
+              <ellipse cx="49" cy="80" rx="38" ry="7" fill="#b9a88f" opacity=".38"/>
+              <path d="M34 54h30l9 19H26Z" fill="#6c8359"/><path d="M39 54h20l5 18H34Z" fill="#91a578"/>
+              <path d="M49 47h9v12h-9z" fill="#735744"/>
+              <path d="M15 25Q15 20 21 20h58q7 0 7 7v13q0 6-7 6H21q-6 0-6-6Z" fill="#d3d8c4" stroke="#617650" stroke-width="3"/>
+              <path d="M22 26h54q4 0 4 4v5H22Z" fill="#f5f0df"/>
+              <path d="M79 20h8q7 0 7 7v13q0 6-7 6h-8Z" fill="#83986b" stroke="#617650" stroke-width="3"/>
+              <circle cx="38" cy="33" r="8" fill="#d9b960" stroke="#a48639" stroke-width="2"/><path d="M33 28q5 5 10 10m0-10q-5 5-10 10" stroke="#fff4bd" stroke-width="1.5" fill="none"/>
+              <circle cx="65" cy="33" r="8" fill="#d9b960" stroke="#a48639" stroke-width="2"/><path d="M60 28q5 5 10 10m0-10q-5 5-10 10" stroke="#fff4bd" stroke-width="1.5" fill="none"/>
+              <circle cx="18" cy="54" r="5" fill="#dd8966"/><path d="M18 50v8m-4-4h8" stroke="#fff3e6" stroke-width="1.5"/>
+            </svg>
+            <span class="launcher-press">Launch!</span>
+          </button>
+          <span class="launcher-label">Ball launcher</span>
+        </div>
+        <span class="machine-ball" aria-hidden="true"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="#c9d75a" stroke="#8d9d35" stroke-width="2"/><path d="M7 5q8 11 18 22M25 6Q15 15 6 26" fill="none" stroke="#f7f5d9" stroke-width="2.2"/></svg></span>
+        <div class="fetch-dog" id="fetch-dog">
+          <svg class="fetch-dog-art fetch-dog-art-front" viewBox="0 0 120 120" role="img" aria-label="Juanjuan, a cute German Shepherd">
+            <defs>
+              <radialGradient id="pup-fur" cx="36%" cy="22%"><stop stop-color="#ffe7a9"/><stop offset=".64" stop-color="#e8b95f"/><stop offset="1" stop-color="#c98c3d"/></radialGradient>
+              <linearGradient id="pup-ear" x2="0" y2="1"><stop stop-color="#523a2d"/><stop offset=".55" stop-color="#35271f"/><stop offset="1" stop-color="#a96f37"/></linearGradient>
+              <linearGradient id="pup-saddle" x2="0" y2="1"><stop stop-color="#463126"/><stop offset="1" stop-color="#2d231e"/></linearGradient>
+              <linearGradient id="pup-bib" x2="0" y2="1"><stop stop-color="#fff2d2"/><stop offset="1" stop-color="#e9d5ae"/></linearGradient>
+            </defs>
+            <ellipse cx="60" cy="111" rx="36" ry="6" fill="#a68d6b" opacity=".28"/>
+            <g class="pup-tail"><path d="M84 83q23-3 25-20 1-8-5-7-5 1-8 12-4 7-16 7Z" fill="url(#pup-fur)"/></g>
+            <ellipse cx="60" cy="87" rx="31" ry="27" fill="url(#pup-fur)"/><path d="M31 78Q36 61 48 62Q54 71 60 68Q68 61 77 62Q85 65 89 78Q81 87 70 83Q60 80 51 85Q39 87 31 78Z" fill="url(#pup-saddle)"/>
+            <ellipse cx="60" cy="91" rx="18" ry="21" fill="url(#pup-bib)"/>
+            <ellipse cx="42" cy="104" rx="15" ry="8" fill="#efc878"/><ellipse cx="78" cy="104" rx="15" ry="8" fill="#efc878"/>
+            <path d="M42 37C35 24 30 10 27 4C25 0 21 1 19 6C16 14 20 33 29 47Q35 42 42 44ZM78 37C85 24 90 10 93 4C95 0 99 1 101 6C104 14 100 33 91 47Q85 42 78 44Z" fill="url(#pup-ear)"/>
+            <path d="M37 34C32 23 29 13 27 8C25 5 24 8 24 14C25 25 29 35 34 41ZM83 34C88 23 91 13 93 8C95 5 96 8 96 14C95 25 91 35 86 41Z" fill="#c88c49" opacity=".9"/>
+            <circle cx="60" cy="51" r="37" fill="url(#pup-fur)"/><path d="M39 43q7-5 14 0m14 0q7-5 14 0" fill="none" stroke="#b77e3d" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="46" cy="51" rx="7" ry="9" fill="#382a22"/><ellipse cx="74" cy="51" rx="7" ry="9" fill="#382a22"/>
+            <circle cx="48" cy="48" r="2.5" fill="#fff8e9"/><circle cx="76" cy="48" r="2.5" fill="#fff8e9"/>
+            <ellipse cx="60" cy="67" rx="19" ry="13" fill="url(#pup-bib)"/>
+            <ellipse cx="60" cy="62" rx="7" ry="5.5" fill="#49342a"/><ellipse cx="58" cy="60" rx="2" ry="1.5" fill="#fff4df"/>
+            <path d="M60 67q-2 6-8 5m8-5q2 6 8 5" fill="none" stroke="#6b4733" stroke-width="2" stroke-linecap="round"/>
+            <g class="pup-fetch-ball"><circle cx="60" cy="70" r="8" fill="#c9d75a" stroke="#8d9d35" stroke-width="1.5"/><path d="M55 64q6 6 10 12m0-12q-6 6-10 12" fill="none" stroke="#fff9dc" stroke-width="1.4"/></g>
+            <path d="M38 83q-5 9-2 15m46-15q5 9 2 15" fill="none" stroke="#f8dda2" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+          </svg>
+<svg class="fetch-dog-art-side" viewBox="0 0 140 120" role="img" aria-label="Juanjuan running in side profile">
+            <ellipse cx="70" cy="111" rx="49" ry="6" fill="#a68d6b" opacity=".28"/>
+            <g class="side-tail"><path d="M31 62Q15 53 12 38Q11 31 17 34Q28 43 40 48Z" fill="#493126"/><path d="M31 62Q18 51 16 40" fill="none" stroke="#d99a4f" stroke-width="5" stroke-linecap="round"/></g>
+            <ellipse cx="68" cy="70" rx="39" ry="25" fill="#d99a4f"/><path d="M39 58Q57 42 82 49Q94 53 102 68Q88 77 72 70Q55 65 42 77Z" fill="#493126"/>
+            <path d="M50 84Q68 96 89 83L92 99Q73 109 52 96Z" fill="#f1c477"/>
+            <path class="side-leg-back" d="M48 82Q44 94 40 105L36 108Q32 111 37 113L53 112Q58 109 55 104L61 84Z" fill="#b9783d"/>
+            <path class="side-leg-front" d="M82 82Q85 94 88 104L85 109Q82 113 88 114L103 113Q108 111 104 107L98 102L96 82Z" fill="#e0a354"/>
+            <path d="M82 45Q86 26 101 31Q114 34 118 49L128 55Q132 59 127 62L111 66Q100 64 96 58L84 61Z" fill="#d99a4f"/>
+            <path d="M86 48Q94 38 107 42L113 54Q101 60 91 57Z" fill="#493126"/>
+            <path d="M86 42L83 17Q83 12 88 16L101 39Z" fill="#493126"/><path d="M103 39L113 18Q116 13 118 20L116 46Z" fill="#493126"/>
+            <path d="M88 25L87 20L96 39Z" fill="#a96f49"/><path d="M112 32L115 22L112 42Z" fill="#a96f49"/>
+            <ellipse cx="111" cy="52" rx="3" ry="4" fill="#211915"/><circle cx="112" cy="51" r="1" fill="#fff8e9"/><ellipse cx="128" cy="58" rx="5" ry="4" fill="#493126"/>
+            <g class="pup-fetch-ball-side"><circle cx="123" cy="54" r="7" fill="#c9d75a" stroke="#8d9d35" stroke-width="1.5"/><path d="M119 49q5 5 8 10m0-10q-5 5-8 10" stroke="#fff9dc" stroke-width="1.2" fill="none"/></g>
+          </svg>
+        
+        </div>
+        <p class="machine-status" id="machine-status" aria-live="polite">Press the launcher and Juanjuan will fetch the ball.</p>
+      </div>
+    </section>
   </main>
 </body>
 </html>
