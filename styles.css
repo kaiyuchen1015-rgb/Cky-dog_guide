@@ -286,3 +286,13 @@ body{font-size:17px}.brand{font-size:17px}.main-nav{font-size:15px}.hero.home-he
   .quiz-main{padding-left:10px;padding-right:10px}
   .quiz-shell{padding:20px 12px}
 }
+
+/* Home actions and quiz navigation */
+.hero-actions{display:flex;flex-wrap:nowrap;gap:8px;margin-top:22px}
+.hero-actions .button{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:12px clamp(8px,1.6vw,18px);font-size:clamp(11px,1.1vw,14px)}
+.quiz-restart-row{display:flex;justify-content:flex-end;max-width:900px;margin:8px auto 0;padding:0}
+.quiz-restart{width:42px;height:42px;padding:0;border:1px solid #60774b;border-radius:50%;background:#d5dfca;color:#382f27;font-size:28px;line-height:1;cursor:pointer;box-shadow:0 3px 0 #8fa27b}
+.quiz-restart:hover{transform:translateY(-2px)}
+.quiz-restart:before{content:none}
+@media(max-width:700px){.hero-actions{gap:5px}.hero-actions .button{padding:10px clamp(6px,1.8vw,12px);font-size:clamp(10px,2.9vw,13px)}}
+@media(max-width:560px){.quiz-controls>*{flex:initial}.quiz-controls .quiz-back,.quiz-controls .button{flex:1 1 130px}.quiz-restart-row{margin-top:6px}}
